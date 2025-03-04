@@ -1,0 +1,13 @@
+services:
+  app:
+    build: .
+    container_name: simple-go-jwt-api
+    ports:
+      - "9000:9000"
+    environment:
+      - PORT=9000
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+    restart: unless-stopped
